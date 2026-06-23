@@ -14,16 +14,16 @@ const Navbar = () => {
 
   return (
     <div className="fixed top-0 left-0 z-50 w-full px-4 py-3 md:px-8 lg:px-16">
-      <nav className="mx-auto flex max-w-7xl items-center justify-between rounded-lg bg-white/80 px-4 py-3 shadow-sm ring-1 ring-black/5 backdrop-blur">
+      <nav className="mx-auto flex max-w-7xl items-center justify-between rounded-lg bg-white/60 px-4 py-3 shadow-sm ring-1 ring-black/5 backdrop-blur">
         <Link to="/" className="flex shrink-0 items-center" aria-label="SMM Operators home">
           <img src={Logo} alt="SMM Operators logo" className="h-12 w-12 md:h-16 md:w-16" />
         </Link>
 
-        <div className="hidden items-center gap-8 md:flex">
-          <ul className="flex items-center gap-6 text-sm font-medium text-gray-700 lg:gap-8">
+        <div className="hidden items-center gap-8 md:flex lg:gap-80">
+          <ul className="flex items-center gap-6 text-sm font-medium text-gray-800 lg:gap-8">
             {navLinks.map((link) => (
               <li key={link.to}>
-                <Link className="transition hover:text-gray-950" to={link.to}>
+                <Link className="transition hover:text-gray-950 text-2xl" to={link.to}>
                   {link.label}
                 </Link>
               </li>
