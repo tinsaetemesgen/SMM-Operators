@@ -1,29 +1,41 @@
-import { useState } from "react"
-import { Link } from "react-router-dom"
-import { Menu, Moon, X } from "lucide-react"
-import Logo from "../../assets/operators-Logo.png"
+import { useState } from "react";
+import { Link } from "react-router-dom";
+import { Menu, Moon, X } from "lucide-react";
+import Logo from "../../assets/operators-Logo.png";
 
 const navLinks = [
   { label: "About Us", to: "/about" },
   { label: "Services", to: "/services" },
   { label: "Contact", to: "/contact" },
-]
+];
 
 const Navbar = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
     <div className="fixed top-0 left-0 z-50 w-full px-4 py-3 md:px-8 lg:px-16">
       <nav className="mx-auto flex max-w-7xl items-center justify-between rounded-lg bg-white/60 px-4 py-3 shadow-sm ring-1 ring-black/5 backdrop-blur">
-        <Link to="/" className="flex shrink-0 items-center" aria-label="SMM Operators home">
-          <img src={Logo} alt="SMM Operators logo" className="h-12 w-12 md:h-16 md:w-16" />
+        <Link
+          to="/"
+          className="flex shrink-0 items-center"
+          aria-label="SMM Operators home"
+        >
+          <img
+            src={Logo}
+            alt="SMM Operators logo"
+            className="h-12 w-12 md:h-16 md:w-16"
+          />
         </Link>
 
         <div className="hidden items-center gap-8 md:flex lg:gap-80">
           <ul className="flex items-center gap-6 text-sm font-medium text-gray-800 lg:gap-8">
+
             {navLinks.map((link) => (
               <li key={link.to}>
-                <Link className="transition hover:text-gray-950 text-2xl" to={link.to}>
+                <Link
+                  className="transition-colors hover:text-gray-600 text-2xl"
+                  to={link.to}
+                >
                   {link.label}
                 </Link>
               </li>
@@ -59,13 +71,21 @@ const Navbar = () => {
             type="button"
             className="flex h-10 w-10 items-center justify-center rounded-full border border-gray-200 bg-white text-gray-800"
             aria-expanded={isMenuOpen}
-            aria-label={isMenuOpen ? "Close navigation menu" : "Open navigation menu"}
+            aria-label={
+              isMenuOpen ? "Close navigation menu" : "Open navigation menu"
+            }
             onClick={() => setIsMenuOpen((current) => !current)}
           >
-            {isMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+            {isMenuOpen ? (
+              <X className="h-5 w-5" />
+            ) : (
+              <Menu className="h-5 w-5" />
+            )}
           </button>
         </div>
       </nav>
+
+      {/* Mobile Menu*/}
 
       {isMenuOpen && (
         <div className="mx-auto mt-2 max-w-7xl rounded-lg bg-white/95 p-4 shadow-sm ring-1 ring-black/5 backdrop-blur md:hidden">
@@ -73,7 +93,7 @@ const Navbar = () => {
             {navLinks.map((link) => (
               <li key={link.to}>
                 <Link
-                  className="block rounded-md px-3 py-2 transition hover:bg-gray-100 hover:text-gray-950"
+                  className="block rounded-md px-3 py-2 transition-colors hover:bg-gray-100 hover:text-gray-600"
                   to={link.to}
                   onClick={() => setIsMenuOpen(false)}
                 >
@@ -92,7 +112,7 @@ const Navbar = () => {
         </div>
       )}
     </div>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;
