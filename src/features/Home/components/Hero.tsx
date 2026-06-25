@@ -2,11 +2,11 @@ import HeroImg from "../../../assets/images/ourTeamm.png";
 
 const Hero = () => {
   return (
-    <section className="relative isolate flex min-h-screen w-full scroll-mt-28 items-center overflow-hidden bg-slate-950 px-4 pt-32 text-white sm:px-6 lg:px-16" id="hero">
+    <section className="relative isolate flex min-h-screen w-full scroll-mt-28 items-center overflow-visible bg-slate-950 px-4 pt-32 text-white sm:px-6 lg:px-16" id="hero">
       <div className="absolute inset-0 -z-20 bg-[radial-gradient(circle_at_top_left,rgba(245,158,11,0.28),transparent_30%),linear-gradient(135deg,#0f172a_0%,#1e293b_48%,#111827_100%)]" />
       <div className="absolute inset-x-0 bottom-0 -z-10 h-36 bg-linear-to-t from-slate-950 to-transparent" />
 
-      <div className="mx-auto grid w-full max-w-7xl items-center gap-10 lg:grid-cols-[1fr_0.95fr]">
+      <div className="relative z-10 mx-auto grid w-full max-w-7xl items-center gap-10 lg:grid-cols-[1fr_0.95fr]">
         <div className="max-w-2xl text-center lg:text-left">
           <p className="md:text-3xl lg:text-4xl font-semibold uppercase text-amber-600">
             SMM Operators
