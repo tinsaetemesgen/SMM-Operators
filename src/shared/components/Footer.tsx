@@ -1,12 +1,8 @@
-import { Copyright, Mail, Phone } from 'lucide-react';
-import Logo from "../../assets/operators-Logo.png"
-import BackToTop from './BackToTop';
-
-const quickLinks = [
-  { label: "Home", href: "#hero" },
-  { label: "About", href: "#about" },
-  { label: "Team", href: "#team" },
-];
+import { Copyright, Mail, Phone } from "lucide-react";
+import { Link } from "react-router-dom";
+import Logo from "../../assets/operators-Logo.png";
+import BackToTop from "./BackToTop";
+import { useSectionLink } from "../hooks/useSectionLink";
 
 type IconProps = {
   className?: string;
@@ -63,6 +59,8 @@ const socialLinks = [
 ];
 
 const Footer = () => {
+  const goToSection = useSectionLink();
+
   return (
     <footer
       id="footer"
@@ -70,10 +68,10 @@ const Footer = () => {
     >
       <div className="mx-auto grid w-full max-w-7xl gap-8 sm:grid-cols-2 lg:grid-cols-[1fr_auto_auto] lg:items-start">
         <div>
-          <a href="#hero" className="flex shrink-0 items-center" aria-label="SMM Operators home">
+          <Link to="/" className="flex shrink-0 items-center" aria-label="SMM Operators home">
             <img src={Logo} alt="SMM Operators logo" className="h-14 w-14 rounded bg-white p-1" />
             <span className="ml-3 text-lg font-semibold text-white">SMM Operators</span>
-          </a>
+          </Link>
           <p className="mt-4 max-w-md text-sm leading-6 text-slate-400">
             Social media marketing support for teams that need consistent
             planning, publishing, and reporting.
@@ -101,11 +99,21 @@ const Footer = () => {
             Quick links
           </h2>
           <nav className="mt-4 flex flex-col gap-3 text-sm">
-            {quickLinks.map((link) => (
-              <a key={link.href} href={link.href} className="transition hover:text-white">
-                {link.label}
-              </a>
-            ))}
+            <button type="button" onClick={() => goToSection("hero")} className="text-left transition hover:text-white">
+              Home
+            </button>
+            <button type="button" onClick={() => goToSection("about")} className="text-left transition hover:text-white">
+              About
+            </button>
+            <button type="button" onClick={() => goToSection("team")} className="text-left transition hover:text-white">
+              Team
+            </button>
+            <Link to="/services" className="transition hover:text-white">
+              Services
+            </Link>
+            <Link to="/contact" className="transition hover:text-white">
+              Contact
+            </Link>
           </nav>
         </div>
 
@@ -144,7 +152,7 @@ const Footer = () => {
         </p>
       </div>
     </footer>
-  )
-}
+  );
+};
 
-export default Footer
+export default Footer;

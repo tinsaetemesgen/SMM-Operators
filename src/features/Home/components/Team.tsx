@@ -1,3 +1,20 @@
+const teamMembers = [
+  {
+    name: "Tinsae Temesgen",
+    role: "Lead Strategist",
+    bio: "Sets campaign direction and keeps every client plan on track.",
+  },
+  {
+    name: "Bethel Alemu",
+    role: "Content Creator",
+    bio: "Designs and writes the posts that keep audiences engaged.",
+  },
+  {
+    name: "Nahom Girma",
+    role: "Performance Analyst",
+    bio: "Tracks results and turns the numbers into clear next steps.",
+  },
+];
 
 const Team = () => {
   return (
@@ -17,17 +34,13 @@ const Team = () => {
         </div>
 
         <div className="mt-10 grid gap-4 sm:grid-cols-3">
-          {[
-            "Campaign planning",
-            "Content creation",
-            "Performance reporting",
-          ].map((item) => (
-            <div key={item} className="rounded-lg bg-white p-6 shadow-sm ring-1 ring-slate-200">
-              <h3 className="text-lg font-bold text-slate-950">{item}</h3>
-              <p className="mt-3 text-sm leading-6 text-slate-600">
-                Practical execution handled with clear ownership and regular
-                review.
+          {teamMembers.map((member) => (
+            <div key={member.name} className="rounded-lg bg-white p-6 shadow-sm ring-1 ring-slate-200">
+              <h3 className="text-lg font-bold text-slate-950">{member.name}</h3>
+              <p className="mt-1 text-sm font-semibold uppercase tracking-wide text-amber-600">
+                {member.role}
               </p>
+              <p className="mt-3 text-sm leading-6 text-slate-600">{member.bio}</p>
             </div>
           ))}
         </div>
@@ -36,4 +49,4 @@ const Team = () => {
   );
 };
 
-export default Team
+export default Team;

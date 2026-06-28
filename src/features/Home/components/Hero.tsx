@@ -1,6 +1,9 @@
 import HeroImg from "../../../assets/images/ourTeamm.png";
+import { useSectionLink } from "../../../shared/hooks/useSectionLink";
 
 const Hero = () => {
+  const goToSection = useSectionLink();
+
   return (
     <section className="relative isolate flex min-h-screen w-full scroll-mt-28 items-center overflow-visible bg-slate-950 px-4 pt-32 text-white sm:px-6 lg:px-16" id="hero">
       <div className="absolute inset-0 -z-20 bg-[radial-gradient(circle_at_top_left,rgba(245,158,11,0.28),transparent_30%),linear-gradient(135deg,#0f172a_0%,#1e293b_48%,#111827_100%)]" />
@@ -21,18 +24,20 @@ const Hero = () => {
           </p>
 
           <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row lg:justify-start">
-            <a
-              href="#about"
+            <button
+              type="button"
+              onClick={() => goToSection("about")}
               className="rounded-full bg-amber-400 px-6 py-3 text-sm font-bold text-slate-950 transition hover:bg-amber-300"
             >
               About us
-            </a>
-            <a
-              href="#team"
+            </button>
+            <button
+              type="button"
+              onClick={() => goToSection("team")}
               className="rounded-full border border-white/30 px-6 py-3 text-sm font-semibold text-white transition hover:border-white hover:bg-white/10"
             >
               Meet the team
-            </a>
+            </button>
           </div>
         </div>
 

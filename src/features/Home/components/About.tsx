@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const About = () => {
   return (
     <section id="about" className="w-full scroll-mt-28 bg-white px-4 py-20 sm:px-6 lg:px-16">
@@ -9,6 +11,12 @@ const About = () => {
           <h2 className="mt-3 text-3xl font-bold text-slate-950 sm:text-4xl">
             We turn social media activity into organized growth work.
           </h2>
+          <Link
+            to="/about"
+            className="mt-5 inline-block text-sm font-semibold text-amber-600 hover:text-amber-700"
+          >
+            Learn more about us &rarr;
+          </Link>
         </div>
 
         <div className="grid gap-5 text-slate-600 sm:grid-cols-2">
