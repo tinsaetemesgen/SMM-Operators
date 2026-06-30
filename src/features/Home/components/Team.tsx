@@ -1,18 +1,18 @@
 const teamMembers = [
   {
     name: "Tinsae Temesgen",
-    role: "Lead Strategist",
-    bio: "Sets campaign direction and keeps every client plan on track.",
+    role: "Website Developer",
+    bio: "Blah blah blah.",
   },
   {
-    name: "Bethel Alemu",
-    role: "Content Creator",
-    bio: "Designs and writes the posts that keep audiences engaged.",
+    name: "Gemechis Dejene",
+    role: "Graphics Designer",
+    bio: "Blah blah blah.",
   },
   {
-    name: "Nahom Girma",
-    role: "Performance Analyst",
-    bio: "Tracks results and turns the numbers into clear next steps.",
+    name: "Netsanet Fikadu",
+    role: "Digital Marketing",
+    bio: "Blah blah blah.",
   },
 ];
 

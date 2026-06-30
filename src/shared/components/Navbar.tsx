@@ -13,6 +13,8 @@ const navLinks = [
 ];
 
 const Navbar = () => {
+
+
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const goToSection = useSectionLink();
 
@@ -65,10 +67,9 @@ const Navbar = () => {
           <div className="flex items-center gap-3">
             <button
               type="button"
-              className="flex h-10 w-10 items-center justify-center rounded-full border-0 bg-gray-200 text-gray-700"
-              aria-label="Theme toggle coming soon"
+              className="flex h-10 w-10 items-center justify-center rounded-full border-0 bg-gray-200 text-gray-700 cursor-pointer"
+              aria-label="Theme toggle"
             >
-              <Moon className="h-4 w-4" />
             </button>
             <Link
               to="/contact"
@@ -83,9 +84,9 @@ const Navbar = () => {
           <button
             type="button"
             className="flex h-10 w-10 items-center justify-center rounded-full border border-gray-200 bg-white text-gray-700"
-            aria-label="Theme toggle coming soon"
+            aria-label="Theme toggle"
           >
-            <Moon className="h-4 w-4" />
+            <Moon className="h-6 w-6" />
           </button>
           <button
             type="button"
