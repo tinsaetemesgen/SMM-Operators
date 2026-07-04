@@ -1,4 +1,0 @@
-- [x] Fix Team social links layout: define .member-socials/.social-pill/.social-icon in Team.css so icons show and align side-by-side
-- [x] Add Contact dark-mode responsive styling for inputs/button/spacing
-- [x] Add loading animation/state when clicking Send (disable button while opening mail client)
-- [ ] Verify overall consistency by quick visual pass (light/dark + mobile widths)
