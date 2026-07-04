@@ -1,14 +1,56 @@
-.team-orbit{
+.team-orbit-shell{
     position: relative;
-    width:520px;
-    height:520px;
-    border-radius:50%;
-}     
+    width: 520px;
+    height: 520px;
+}
+
+.team-orbit{
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    animation: rotate 20s linear infinite;
+}
+
+@keyframes rotate{
+    from{
+        transform:rotate(0deg);
+    }
+    to{
+        transform:rotate(360deg);
+    }
+}
+
+/* Counter-rotate members so photos stay upright while orbit rotates */
+@keyframes counter-rotate{
+    from{
+        transform:rotate(0deg);
+    }
+    to{
+        transform:rotate(-360deg);
+    }
+}
 
 .member{
     position:absolute;
     width: 90px;
-    height: 90px; 
+    height: 90px;
+}
+
+/* Counter-rotate the image itself so the photo stays upright while the orbit spins */
+.member img{
+    animation: counter-rotate 20s linear infinite;
+    transform-origin: center center;
+}
+
+.center-member{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90px;
+    height: 90px;
+    z-index: 20;
+    animation: none;
 }
 
 .member img{
@@ -61,20 +103,6 @@
 .bottom-right{
     bottom:110px;
     right:60px;
-}
-
-.center-member{
-    position:absolute;
-
-    top:50%;
-    left:50%;
-
-    transform:translate(-50%,-50%);
-
-    width:90px;
-    height:90px;
-
-    z-index:20;
 }
 
 .center-member img{
@@ -197,19 +225,20 @@
 
 @media (max-width:768px){
 
+    .team-orbit-shell{
+        width: 340px;
+        height: 340px;
+    }
+
     .team-orbit{
-
-        width:340px;
-        height:340px;
-
+        width: 340px;
+        height: 340px;
     }
 
     .member,
     .center-member{
-
         width:65px;
         height:65px;
-
     }
 
     .top{
@@ -283,20 +312,20 @@
 
 @media (max-width:480px){
 
+    .team-orbit-shell{
+        width: 280px;
+        height: 280px;
+    }
+
     .team-orbit{
-
-        width:280px;
-        height:280px;
-
+        width: 280px;
+        height: 280px;
     }
 
     .member,
     .center-member{
-
         width:55px;
         height:55px;
-        animation:float 3s ease-in-out infinite;
-
     }
 
     .top{
