@@ -6,6 +6,8 @@ const Hero = () => {
 
   return (
     <section className="relative isolate flex min-h-screen w-full scroll-mt-28 items-center overflow-visible bg-slate-950 px-4 pt-32 text-white sm:px-6 lg:px-16" id="hero">
+      <div className="absolute inset-0 -z-20 bg-linear-to-r from-yellow-900 to-indigo-950" />
+      <div className="absolute inset-x-0 bottom-0 -z-10 h-36 bg-linear-to-t from-slate-950 to-transparent" />
       <div className="absolute inset-0 -z-20 bg-linear-to-r from-yellow-800 to-indigo-800" />
       <div className="absolute inset-x-0 bottom-0 -z-10 h-36 bg-linear-to-t from-slate-950 to-transparent" />
 
@@ -50,7 +52,7 @@ const Hero = () => {
           />
         </div>
       </div>
-    </section>
+    </section >
   );
 };
 

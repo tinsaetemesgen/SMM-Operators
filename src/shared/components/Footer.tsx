@@ -64,61 +64,62 @@ const Footer = () => {
   return (
     <footer
       id="footer"
-      className="flex min-h-110 w-full scroll-mt-28 flex-col rounded-t-4xl bg-slate-900 px-4 py-10 text-slate-300 sm:min-h-95 sm:px-6 lg:px-16"
+      className="flex min-h-110 w-full scroll-mt-28 flex-col rounded-t-4xl bg-slate-100 px-4 py-10 text-slate-600 transition-colors dark:bg-slate-900 dark:text-slate-300 sm:min-h-95 sm:px-6 lg:px-16"
     >
       <div className="mx-auto grid w-full max-w-7xl gap-8 sm:grid-cols-2 lg:grid-cols-[1fr_auto_auto] lg:items-start">
         <div>
           <Link to="/" className="flex shrink-0 items-center" aria-label="SMM Operators home">
             <img src={Logo} alt="SMM Operators logo" className="h-14 w-14 rounded bg-white p-1" />
-            <span className="ml-3 text-lg font-semibold text-white">SMM Operators</span>
+            <span className="ml-3 text-lg font-semibold text-slate-900 dark:text-white">SMM Operators</span>
           </Link>
-          <p className="mt-4 max-w-md text-sm leading-6 text-slate-400">
+          <p className="mt-4 max-w-md text-sm leading-6 text-slate-500 dark:text-slate-400">
             Social media marketing support for teams that need consistent
             planning, publishing, and reporting.
           </p>
-          <div className="mt-5 space-y-2 text-sm text-slate-300">
+          <div className="mt-5 space-y-2 text-sm text-slate-600 dark:text-slate-300">
             <a
               href="mailto:smmoperators.contact@gmail.com"
-              className="flex items-center gap-2 transition hover:text-white"
+              className="flex items-center gap-2 transition hover:text-slate-900 dark:hover:text-white"
             >
-              <Mail className="h-4 w-4 text-amber-300" />
+              <Mail className="h-4 w-4 text-amber-600 dark:text-amber-300" />
               <span>smmoperators.contact@gmail.com</span>
             </a>
+
             <a
               href="tel:+251911123456"
-              className="flex items-center gap-2 transition hover:text-white"
+              className="flex items-center gap-2 transition hover:text-slate-900 dark:hover:text-white"
             >
-              <Phone className="h-4 w-4 text-amber-300" />
+              <Phone className="h-4 w-4 text-amber-600 dark:text-amber-300" />
               <span>+251911123456</span>
             </a>
           </div>
         </div>
 
         <div>
-          <h2 className="text-sm font-semibold uppercase tracking-[0.18em] text-white">
+          <h2 className="text-sm font-semibold uppercase tracking-[0.18em] text-slate-900 dark:text-white">
             Quick links
           </h2>
           <nav className="mt-4 flex flex-col gap-3 text-sm">
-            <button type="button" onClick={() => goToSection("hero")} className="text-left transition hover:text-white">
+            <button type="button" onClick={() => goToSection("hero")} className="text-left transition hover:text-slate-900 dark:hover:text-white">
               Home
             </button>
-            <button type="button" onClick={() => goToSection("about")} className="text-left transition hover:text-white">
+            <button type="button" onClick={() => goToSection("about")} className="text-left transition hover:text-slate-900 dark:hover:text-white">
               About
             </button>
-            <button type="button" onClick={() => goToSection("team")} className="text-left transition hover:text-white">
+            <button type="button" onClick={() => goToSection("team")} className="text-left transition hover:text-slate-900 dark:hover:text-white">
               Team
             </button>
-            <Link to="/services" className="transition hover:text-white">
+            <Link to="/services" className="transition hover:text-slate-900 dark:hover:text-white">
               Services
             </Link>
-            <Link to="/contact" className="transition hover:text-white">
+            <Link to="/contact" className="transition hover:text-slate-900 dark:hover:text-white">
               Contact
             </Link>
           </nav>
         </div>
 
         <div>
-          <h2 className="text-sm font-semibold uppercase tracking-[0.18em] text-white">
+          <h2 className="text-sm font-semibold uppercase tracking-[0.18em] text-slate-900 dark:text-white">
             Social
           </h2>
           <div className="mt-4 flex flex-wrap gap-3">
@@ -127,7 +128,7 @@ const Footer = () => {
                 key={label}
                 href={href}
                 aria-label={label}
-                className="flex h-10 w-10 items-center justify-center rounded-full border border-white/15 bg-white/5 text-slate-200 transition hover:border-amber-300 hover:bg-white/10 hover:text-amber-300"
+                className="flex h-10 w-10 items-center justify-center rounded-full border border-slate-900/10 bg-slate-900/5 text-slate-600 transition hover:border-amber-500 hover:bg-slate-900/10 hover:text-amber-600 dark:border-white/15 dark:bg-white/5 dark:text-slate-200 dark:hover:border-amber-300 dark:hover:bg-white/10 dark:hover:text-amber-300"
               >
                 <Icon className="h-5 w-5" />
               </a>
@@ -140,13 +141,13 @@ const Footer = () => {
         <BackToTop />
       </div>
 
-      <div className="mx-auto mt-auto flex w-full max-w-7xl flex-col gap-3 border-t border-white/10 pt-6 text-sm text-slate-400 sm:flex-row sm:items-center sm:justify-between">
+      <div className="mx-auto mt-auto flex w-full max-w-7xl flex-col gap-3 border-t border-slate-900/10 pt-6 text-sm text-slate-500 dark:border-white/10 dark:text-slate-400 sm:flex-row sm:items-center sm:justify-between">
         <p className="flex items-center gap-2 sm:text-1xl">
           <Copyright className="h-4 w-4" /> {new Date().getFullYear()} SMM Operators. All rights reserved.
         </p>
         <p className="sm:text-1xl">
           Built by{" "}
-          <a href="#" className="font-medium text-amber-300 hover:text-amber-200">
+          <a href="https://tinsaetemesgen.netlify.app/" target="" className="font-medium text-amber-600 hover:text-amber-700 dark:text-amber-300 dark:hover:text-amber-200">
             Tinsae Temesgen
           </a>
         </p>

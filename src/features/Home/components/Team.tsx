@@ -1,52 +1,154 @@
+import '../styles/Team.css'
+import { useState } from "react";
+
+import Photo from '../../../assets/operators.jpg'
+
 const teamMembers = [
   {
+    id: 0,
     name: "Tinsae Temesgen",
-    role: "Website Developer",
-    bio: "Blah blah blah.",
+    role: "Team Leader and Website Developer",
+    bio: "Responsible for developing and maintaining websites and web applications.",
+    image: Photo,
   },
   {
+    id: 1,
     name: "Gemechis Dejene",
-    role: "Graphics Designer",
-    bio: "Blah blah blah.",
+    role: "CEO & Founder",
+    bio: "Leads the company, builds client relationships, and oversees strategy.",
+    image: Photo,
   },
   {
+    id: 2,
     name: "Netsanet Fikadu",
-    role: "Digital Marketing",
-    bio: "Blah blah blah.",
+    role: "Digital Marketer",
+    bio: "Responsible for branding, creative concepts and visual identity.",
+    image: Photo,
+  },
+  {
+    id: 3,
+    name: "Fasika Tesfaye",
+    role: "Graphics Designer",
+    bio: "Designs graphics, banners and social media posts",
+    image: Photo,
+  },
+  {
+    id: 4,
+    name: "Ruth Shewaferaw",
+    role: "Digital marketer and Graphic Designer",
+    bio: "Designs graphics, banners and social media posts.",
+    image: Photo,
+  },
+  {
+    id: 5,
+    name: "Samson Tadesse",
+    role: "Web Developer",
+    bio: "Develops and maintains websites and web applications.",
+    image: Photo,
+  },
+  {
+    id: 6,
+    name: "Iman Ymer",
+    role: "Video Editor",
+    bio: "Creates and edits video content for various platforms.",
+    image: Photo,
   },
 ];
 
-const Team = () => {
+
+
+function Team() {
+  const [selectedMember, setSelectedMember] = useState(teamMembers[0]);
+
   return (
-    <section id="team" className="w-full scroll-mt-28 bg-slate-100 px-4 py-20 sm:px-6 lg:px-16">
-      <div className="mx-auto max-w-7xl">
-        <div className="max-w-3xl">
-          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-amber-600">
+    <section
+      id="teamSection"
+      className="w-full flex scroll-mt-28 px-4 py-20 sm:px-6 lg:px-16 rounded-b-[2.5rem] sm:rounded-b-[4rem] overflow-hidden bg-gradient-to-r from-yellow-900 to-indigo-900 dark:from-slate-900 dark:to-slate-800">
+      <div className="team-container mx-auto max-w-7xl">
+
+        <div className="team-header max-w-3xl">
+          <p className="text-sm font-semibold font-serif uppercase tracking-[0.2em] text-amber-600">
             Team
           </p>
-          <h2 className="mt-3 text-3xl font-bold text-slate-950 sm:text-4xl">
+          <h2 className="mt-3 text-3xl font-bold text-white sm:text-4xl dark:text-white">
             A focused group covering strategy, content, and operations.
           </h2>
-          <p className="mt-4 text-base leading-8 text-slate-600 sm:text-lg">
+          <p className="mt-4 text-base leading-8 text-white/90 sm:text-lg dark:text-slate-300">
             Meet the people behind the planning, creative direction, and
-            performance checks that keep every campaign moving.
+            performance checks that make our clients happy.
           </p>
         </div>
 
-        <div className="mt-10 grid gap-4 sm:grid-cols-3">
-          {teamMembers.map((member) => (
-            <div key={member.name} className="rounded-lg bg-white p-6 shadow-sm ring-1 ring-slate-200">
-              <h3 className="text-lg font-bold text-slate-950">{member.name}</h3>
-              <p className="mt-1 text-sm font-semibold uppercase tracking-wide text-amber-600">
-                {member.role}
-              </p>
-              <p className="mt-3 text-sm leading-6 text-slate-600">{member.bio}</p>
+
+        <div className="team-members mt-10 flex flex-col items-center gap-16 lg:flex-row lg:items-center lg:justify-between">
+
+          <div className="team-orbit">
+            <div
+              className="member top"
+              onMouseEnter={() => setSelectedMember(teamMembers[6])}>
+              <img src={teamMembers[6].image} alt="" />
             </div>
-          ))}
+
+            <div
+              className="member top-left"
+              onMouseEnter={() => setSelectedMember(teamMembers[1])}>
+              <img src={teamMembers[1].image} alt="" />
+            </div>
+
+            <div
+              className="member top-right"
+              onMouseEnter={() => setSelectedMember(teamMembers[2])}>
+              <img src={teamMembers[2].image} alt="" />
+            </div>
+
+            <div
+              className="member bottom-left"
+              onMouseEnter={() => setSelectedMember(teamMembers[3])}>
+              <img src={teamMembers[3].image} alt="" />
+            </div>
+
+            <div
+              className="member bottom-right"
+              onMouseEnter={() => setSelectedMember(teamMembers[4])}>
+              <img src={teamMembers[4].image} alt="" />
+            </div>
+
+            <div
+              className="member bottom"
+              onMouseEnter={() => setSelectedMember(teamMembers[5])} >
+              <img src={teamMembers[5].image} alt="" />
+            </div>
+
+
+            <div
+              className="member center-member"
+              onMouseEnter={() => setSelectedMember(teamMembers[0])}>
+              <img src={teamMembers[0].image} alt="" />
+
+            </div>
+
+          </div>
+
+          <div className="teamDetail">
+
+            <img
+              src={selectedMember.image}
+              alt={selectedMember.name}
+              className="detail-image"
+            />
+            <h2>{selectedMember.name}</h2>
+            <h4>{selectedMember.role}</h4>
+            <p>{selectedMember.bio}</p>
+          </div>
+
+
         </div>
+
       </div>
     </section>
+
+
   );
-};
+}
 
 export default Team;
