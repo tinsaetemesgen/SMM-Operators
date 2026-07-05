@@ -23,7 +23,7 @@ const services = [
 const Services = () => {
   return (
     <div>
-      <main className="flex w-full min-h-screen flex-col items-center bg-gray-100">
+      <main className="flex w-full min-h-screen flex-col items-center bg-gray-100 dark:bg-slate-950">
         <Navbar />
 
         <section className="w-full bg-slate-950 px-4 pt-40 pb-20 text-white sm:px-6 lg:px-16">
@@ -41,12 +41,15 @@ const Services = () => {
           </div>
         </section>
 
-        <section className="w-full bg-white px-4 py-20 sm:px-6 lg:px-16">
+        <section className="w-full bg-white px-4 py-20 sm:px-6 lg:px-16 dark:bg-slate-900">
           <div className="mx-auto max-w-7xl grid gap-6 sm:grid-cols-2">
             {services.map((service) => (
-              <div key={service.title} className="rounded-lg bg-slate-50 p-6 shadow-sm ring-1 ring-slate-200">
-                <h3 className="text-lg font-bold text-slate-950">{service.title}</h3>
-                <p className="mt-3 text-sm leading-6 text-slate-600">{service.text}</p>
+              <div
+                key={service.title}
+                className="rounded-lg bg-slate-50 p-6 shadow-sm ring-1 ring-slate-200 dark:bg-slate-800 dark:ring-white/10"
+              >
+                <h3 className="text-lg font-bold text-slate-950 dark:text-white">{service.title}</h3>
+                <p className="mt-3 text-sm leading-6 text-slate-600 dark:text-slate-300">{service.text}</p>
               </div>
             ))}
           </div>

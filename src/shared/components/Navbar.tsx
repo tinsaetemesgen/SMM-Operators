@@ -1,8 +1,9 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Menu, Moon, Sun, X } from "lucide-react";
 import Logo from "../../assets/operators-Logo.png";
 import { useSectionLink } from "../hooks/useSectionLink";
+import { useTheme } from "../context/ThemeContext";
 
 const navLinks = [
   { label: "About", kind: "scroll" as const, hash: "about" },
@@ -12,14 +13,8 @@ const navLinks = [
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isDarkMode, setIsDarkMode] = useState(false);
+  const { isDarkMode, toggleTheme } = useTheme();
   const goToSection = useSectionLink();
-
-  useEffect(() => {
-    document.documentElement.classList.toggle("dark", isDarkMode);
-  }, [isDarkMode]);
-
-  const toggleDarkMode = () => setIsDarkMode((prev) => !prev);
 
   const handleNavClick = (link: (typeof navLinks)[number]) => {
     if (link.kind === "scroll") goToSection(link.hash);
@@ -62,7 +57,7 @@ const Navbar = () => {
           <div className="flex items-center gap-3">
             <button
               type="button"
-              onClick={toggleDarkMode}
+              onClick={toggleTheme}
               className="flex h-10 w-10 items-center justify-center rounded-full border-0 bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-100 cursor-pointer transition-colors"
               aria-label="Toggle dark mode"
               aria-pressed={isDarkMode}
@@ -71,7 +66,7 @@ const Navbar = () => {
             </button>
             <Link
               to="/contact"
-              className="rounded-full bg-amber-500 px-5 py-2.5 text-sm font-semibold text-white duration-400 hover:bg-gray-800"
+              className="rounded-full bg-amber-500 px-5 py-2.5 text-sm font-semibold text-white duration-400 hover:bg-gray-800 dark:hover:bg-gray-700"
             >
               Let's connect
             </Link>
@@ -81,7 +76,7 @@ const Navbar = () => {
         <div className="flex items-center gap-2 md:hidden">
           <button
             type="button"
-            onClick={toggleDarkMode}
+            onClick={toggleTheme}
             className="flex h-10 w-10 items-center justify-center rounded-full border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-100 transition-colors"
             aria-label="Toggle dark mode"
             aria-pressed={isDarkMode}
@@ -90,7 +85,7 @@ const Navbar = () => {
           </button>
           <button
             type="button"
-            className="flex h-10 w-10 items-center justify-center rounded-full border border-gray-200 bg-white text-gray-800"
+            className="flex h-10 w-10 items-center justify-center rounded-full border border-gray-200 bg-white text-gray-800 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-100"
             aria-expanded={isMenuOpen}
             aria-label={isMenuOpen ? "Close navigation menu" : "Open navigation menu"}
             onClick={() => setIsMenuOpen((current) => !current)}
@@ -129,7 +124,7 @@ const Navbar = () => {
           </ul>
           <Link
             to="/contact"
-            className="mt-3 block rounded-full bg-amber-500 px-5 py-2.5 text-center text-sm font-semibold text-white transition hover:bg-gray-800"
+            className="mt-3 block rounded-full bg-amber-500 px-5 py-2.5 text-center text-sm font-semibold text-white transition hover:bg-gray-800 dark:hover:bg-gray-700"
             onClick={() => setIsMenuOpen(false)}
           >
             Let's connect

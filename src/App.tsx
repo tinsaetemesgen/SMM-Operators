@@ -1,37 +1,38 @@
-import { Routes, Route } from "react-router-dom"
-import Home from "./features/Home/pages/Home"
-import Contact from "./features/Contact/pages/Contact"
-import About from "./features/About/pages/About"
-import Services from "./features/Services/pages/Services"
+import { Routes, Route, useLocation } from "react-router-dom";
+import Home from "./features/Home/pages/Home";
+import Contact from "./features/Contact/pages/Contact";
+import About from "./features/About/pages/About";
+import Services from "./features/Services/pages/Services";
 
-import { useState, useEffect } from 'react'
-import LoadingScreen from "./shared/components/LoadingScreen"
+import { useEffect, useState } from "react";
+import LoadingScreen from "./shared/components/LoadingScreen";
 
 const App = () => {
-
-  const [loading, setLoading] = useState(true);
+  const location = useLocation();
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setLoading(false);
-    }, 2000); // Show loading screen for 2 seconds
+    // Schedule updates so we don't synchronously set state on effect entry.
+    const startTimer = window.setTimeout(() => setLoading(true), 0);
+    const stopTimer = window.setTimeout(() => setLoading(false), 800);
 
-    return () => clearTimeout(timer);
-  }, []);
+    return () => {
+      window.clearTimeout(startTimer);
+      window.clearTimeout(stopTimer);
+    };
+  }, [location.pathname]);
 
-  if (loading) {
-    return <LoadingScreen />;
-  }
   return (
     <div>
-      <Routes>
+      {loading && <LoadingScreen />}
+      <Routes location={location}>
         <Route path="/" element={<Home />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/about" element={<About />} />
         <Route path="/services" element={<Services />} />
       </Routes>
     </div>
-  )
-}
+  );
+};
 
-export default App
+export default App;

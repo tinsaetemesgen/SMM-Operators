@@ -52,10 +52,10 @@ function TikTokIcon({ className }: IconProps) {
 }
 
 const socialLinks = [
-  { label: "Instagram", href: "#", Icon: InstagramIcon },
-  { label: "Telegram", href: "#", Icon: TelegramIcon },
-  { label: "Facebook", href: "#", Icon: FacebookIcon },
-  { label: "TikTok", href: "#", Icon: TikTokIcon },
+  { label: "Instagram", href: "https://www.instagram.com/operators.online?igsh=NWIzaDBoNzBlcXl4", Icon: InstagramIcon },
+  { label: "Telegram", href: "https://t.me/SMM9D", Icon: TelegramIcon },
+  { label: "Facebook", href: "https://www.facebook.com/profile.php?id=61589973457423", Icon: FacebookIcon },
+  { label: "TikTok", href: "https://www.tiktok.com/@operators.contact?_r=1&_t=ZS-971HAl3foY9", Icon: TikTokIcon },
 ];
 
 const Footer = () => {
@@ -127,6 +127,8 @@ const Footer = () => {
               <a
                 key={label}
                 href={href}
+                target="_blank"
+                rel="noopener noreferrer"
                 aria-label={label}
                 className="flex h-10 w-10 items-center justify-center rounded-full border border-slate-900/10 bg-slate-900/5 text-slate-600 transition hover:border-amber-500 hover:bg-slate-900/10 hover:text-amber-600 dark:border-white/15 dark:bg-white/5 dark:text-slate-200 dark:hover:border-amber-300 dark:hover:bg-white/10 dark:hover:text-amber-300"
               >

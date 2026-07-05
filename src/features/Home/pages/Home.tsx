@@ -11,7 +11,7 @@ const Home = () => {
   return (
     <div>
 
-      <main className="flex w-full min-h-screen flex-col items-center bg-gray-100">
+      <main className="flex w-full min-h-screen flex-col items-center bg-gray-100 dark:bg-slate-950">
         <Navbar />
         <Hero />
         <About />

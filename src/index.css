@@ -2,5 +2,68 @@
 @config "../tailwind.config.js";
 
 html {
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
+}
+
+@keyframes bb-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+    filter: blur(3px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+@keyframes bb-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+@keyframes bb-shimmer-border {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+.bb-fade-up {
+  animation: bb-fade-up 650ms ease both;
+}
+
+.bb-float {
+  animation: bb-float 3.2s ease-in-out infinite;
+}
+
+.bb-shimmer-border {
+  background-image: linear-gradient(
+    90deg,
+    rgba(245, 158, 11, 0),
+    rgba(245, 158, 11, 0.45),
+    rgba(245, 158, 11, 0)
+  );
+  background-size: 220% 100%;
+  animation: bb-shimmer-border 2.2s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bb-fade-up,
+  .bb-float,
+  .bb-shimmer-border {
+    animation: none !important;
+  }
+}
+
+body {
+  @apply bg-white dark:bg-slate-950 text-slate-900 dark:text-slate-100;
 }
