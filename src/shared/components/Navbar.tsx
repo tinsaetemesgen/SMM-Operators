@@ -24,7 +24,7 @@ const Navbar = () => {
   return (
     <div className="fixed top-0 left-0 z-50 w-full px-4 py-3 md:px-8 lg:px-16">
       <nav className="mx-auto flex max-w-9xl items-center justify-between rounded-lg bg-white/60 dark:bg-gray-900/70 px-4 py-3 shadow-sm ring-1 ring-black/5 backdrop-blur transition-colors">
-        <Link to="/" className="flex shrink-0 items-center" aria-label="SMM Operators home">
+        <Link to="/" onClick={() => window.scrollTo({ top: 0 })} className="flex shrink-0 items-center" aria-label="SMM Operators home">
           <img src={Logo} alt="SMM Operators logo" className="h-12 w-12 md:h-16 md:w-16" />
         </Link>
 

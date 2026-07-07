@@ -68,9 +68,8 @@ const Footer = () => {
     >
       <div className="mx-auto grid w-full max-w-7xl gap-8 sm:grid-cols-2 lg:grid-cols-[1fr_auto_auto] lg:items-start">
         <div>
-          <Link to="/" className="flex shrink-0 items-center" aria-label="SMM Operators home">
-            <img src={Logo} alt="SMM Operators logo" className="h-14 w-14 rounded bg-white p-1" />
-            <span className="ml-3 text-lg font-semibold text-slate-900 dark:text-white">SMM Operators</span>
+          <Link to="/" onClick={() => window.scrollTo({ top: 0 })} className="flex shrink-0 items-center" aria-label="SMM Operators home">
+            <img src={Logo} alt="SMM Operators logo" className="h-12 w-12 md:h-16 md:w-16" />
           </Link>
           <p className="mt-4 max-w-md text-sm leading-6 text-slate-500 dark:text-slate-400">
             Social media marketing support for teams that need consistent
@@ -106,7 +105,7 @@ const Footer = () => {
             <button type="button" onClick={() => goToSection("about")} className="text-left transition hover:text-slate-900 dark:hover:text-white">
               About
             </button>
-            <button type="button" onClick={() => goToSection("team")} className="text-left transition hover:text-slate-900 dark:hover:text-white">
+            <button type="button" onClick={() => goToSection("teamSection")} className="text-left transition hover:text-slate-900 dark:hover:text-white">
               Team
             </button>
             <Link to="/services" className="transition hover:text-slate-900 dark:hover:text-white">

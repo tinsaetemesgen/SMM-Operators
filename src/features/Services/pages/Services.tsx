@@ -23,7 +23,7 @@ const services = [
 const Services = () => {
   return (
     <div>
-      <main className="flex w-full min-h-screen flex-col items-center bg-gray-100 dark:bg-slate-950">
+      <main className="flex w-full min-h-screen flex-col items-center bg-[rgba(255,247,237,0.7)] dark:bg-[rgba(51,16,7,0.55)]">
         <Navbar />
 
         <section className="w-full bg-slate-950 px-4 pt-40 pb-20 text-white sm:px-6 lg:px-16">

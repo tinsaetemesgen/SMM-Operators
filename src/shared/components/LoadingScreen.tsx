@@ -1,17 +1,19 @@
 import { useMemo } from "react";
 import Logo from "../../assets/operators-Logo.png";
+import { useTheme } from "../context/ThemeContext";
 
 const LoadingScreen = () => {
+    const { isDarkMode } = useTheme();
     const heroBackground = useMemo(() => {
-        // Matches the dark hero styling used across pages (e.g., Contact)
-        // and provides a deterministic backdrop even on route transitions.
-        return "radial-gradient(1200px circle at 20% 0%, rgba(245, 158, 11, 0.22), rgba(2, 6, 23, 0) 55%), linear-gradient(to bottom, rgb(15 23 42), rgb(2 6 23))";
-    }, []);
+        return isDarkMode
+            ? "rgba(249, 115, 22, 0.24)"
+            : "rgba(251, 191, 36, 0.16)";
+    }, [isDarkMode]);
 
     return (
         <div
-            className="fixed inset-0 z-[9999] flex items-center justify-center pointer-events-none"
-            style={{ background: heroBackground }}
+            className="fixed inset-0 z-9999 flex items-center justify-center pointer-events-none"
+            style={{ backgroundColor: heroBackground }}
         >
             <div className="flex flex-col items-center justify-center">
                 <img

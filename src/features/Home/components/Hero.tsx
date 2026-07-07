@@ -35,7 +35,7 @@ const Hero = () => {
             </button>
             <button
               type="button"
-              onClick={() => goToSection("team")}
+              onClick={() => goToSection("teamSection")}
               className="rounded-full border border-white/30 px-6 py-3 text-sm font-semibold text-white transition hover:border-white hover:bg-white/10"
             >
               Meet the team
